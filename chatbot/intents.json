@@ -1,0 +1,133 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "Whats up", "Hello", "Morning", "Hey", "Howdy"],
+         "responses": ["Hello, thanks for visiting", "Hi, how may I assist you", "Hi there, how can I help?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Thank you for visiting (^-^)"],
+         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
+        },
+        {"tag": "hours",
+         "patterns": ["What hours are you open?", "What are your hours?", "When are you open?", "Business hours", "When do you close?", "What time do you open?", "time", "closing time"],
+         "responses": ["We are open 8:30am-6pm Sunday-Thursday!"]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure", "You're very welcome"]
+        },
+        {"tag": "Yes",
+         "patterns": ["Do you offer engineering", "Do you offer business", "Do you have finance", "Do you have clubs"],
+         "responses": ["Yes"]
+        },
+        {"tag": "No",
+         "patterns": ["No"],
+         "responses": ["Okay then, how else may I help you?"]
+        },
+        {"tag": "scholarships",
+         "patterns": ["Do you have scholarships", "Scholarships", "What are the scholarships"],
+         "responses": ["The undergraduate Academic Merit Scholarship at UOWD covers 15% - 50% of tuition\nfees each semester. For more info, please visit:\nhttps://www.uowdubai.ac.ae/undergraduate-programs/scholarships-new-students"]
+        },
+        {"tag": "transportation",
+         "patterns": ["Transportation", "Transportation services", "Do you have transportation services?", "What are your transportation services"],
+         "responses": ["UOWD offers a complimentary shuttle bus between the UOWD campus\nand Dubai Internet City (DIC) Metro Station (which is the nearest station to the UOWD Campus),\nfor students of the University. This free shuttle service runs from 8:00 am to 9:40 pm.\n\nIf you are living outside of Dubai and would like pick up services, please type: Yes"],
+         "context_set": "transport"
+        },
+        {"tag": "transportation2",
+         "patterns": ["Yes"],
+         "responses": ["For students who want to travel from locations outside of Dubai,\nUOWD offers payed transportation services from and to the following locations:\n\n1)Sharjah and Ajman\n2)Abu Dhabi\n3)Qusaus & Al Nadha Dubai\n4)Al Ain\n\nwhich of these locations are you in?"],
+         "context_filter": "transport"
+        },
+         {"tag": "transportation3A",
+         "patterns": ["1", "Sharjah", "from Sharjah", "Ajman"],
+         "responses": ["Students travelling between the Dubai Knowledge Park campus and Sharjah as well as Ajman,\ncan enjoy a comfortable air conditioned service with free Wi-Fi internet connection.\nThis bus depart twice a day on weekdays from pickup spots in each Emirate and will reach the campus\nbefore 8:30am and 11:30am. They return to both Emirates from UOWD's campus at 2:30pm and 5:30pm.\n\nIf you would like to see more details, please type: info"],
+         "context_filter": "transport"
+        },
+        {"tag": "transportation3B",
+         "patterns": ["2", "Abu Dhabi", "from Abu Dhabi", "dhabi"],
+         "responses": ["UOWD also runs transport services from Abu Dhabi to Dubai\nKnowledge Park in comfortable air conditioned buses with\nfree Wi-Fi internet connection. This bus depart once a day on\nweekdays from pickup spots in Abu Dhabi and reach campus\nbefore 8:30am. They return to Abu Dhabi from UOWD at 5:30pm.\n\nIf you would like to see more details, please type: info"],
+         "context_filter": "transport"
+        },
+        {"tag": "transportation4",
+         "patterns": ["info"],
+         "responses": ["\nLocation | Summer Semester (AED) | Autumn/Spring semesters (AED)\n\nSharjah   |  1200  |  2750\nAbh Dhabi |  1400  |  3200\nAl Ain    |  1400  |  3200"],
+         "context_filter": "transport"
+        },
+        {"tag": "programs",
+         "patterns": ["Tell me about your programs","What programmes do you offer?", "Programmes", "What are your programs?", "What programmes are there?", "offered programs", "programs", "what programs do you offer?"],
+         "responses": ["UOWD offers Foundation, Bachelor's, Master's and Doctorate programs. Which program are you interested in?"],
+         "context_set": ""
+        },
+        {"tag": "Suggestion",
+         "patterns": ["What major should I take", "what is the best major for me", "I'm not sure what major to take", "I'm not sure what not major in", "which major is best?"],
+         "responses": ["To know which of our majors/courses we think would be suited to you, you can answer some simple questions.\nTo start, please type: start"],
+         "context_set": "suggest"
+        },
+        {"tag": "Suggestion2",
+         "patterns": ["start"],
+         "responses": ["Alright, please tell us your Highschool grades (A to D) for Math, Physics, Business, IT (in this order)\nfollowed by selecting what you prefer from this list(management, technology, Programming)\nPlease separate your answers with a comma(,)\n\nFor example: A,D,C,C,programming\n\n** TO RESTART PLEASE TYPE: start **"],
+         "context_filter": "suggest"
+        },
+        {"tag": "Suggestion_CS",
+         "patterns": ["A,D,C,B,programming","A,C,C,C,programming","B,C,C,A,programming","B,B,C,B,programming,","A,A,B,A,programming", "D,D,D,A,engineering"],
+         "responses": ["From your answers, we believe 'Computer Science' under the degree program 'Engineering and Information Sciences' would be suited for you!\nFor more info on this, please type: bachelor"],
+         "context_filter": "suggest"
+        },
+        {"tag": "Suggestion_ENGG",
+         "patterns": ["B,A,C,B,engineering","A,C,C,C,engineering","B,B,D,D,engineering","C,B,C,B,engineering", "A,A,B,A,engineering"],
+         "responses": ["From your answers, we believe 'Engineering' under the degree program 'Engineering and Information Sciences' would be suited for you!\nFor more info on this, please type: bachelor"],
+         "context_filter": "suggest"
+        },
+        {"tag": "Bachelor",
+         "patterns": ["Bachelor", "Bachelor's program", "Bachelor's degree", "Undergraduate", "Tell me about your bachelor's", "Tell me about your undergraduate"],
+         "responses": ["UOWD offers a variety of bachelor degree courses and majors.\nYou can learn more at: https://www.uowdubai.ac.ae/bachelor-degree-programs\nThe courses we offer are:\n\n1)Business and Management\n2)Engineering and Information Sciences\n3)Finance and Accounting\n4)Humanities, Social Sciences and Health\n\nWhat are you interested in?"],
+         "context_set": "interest"
+        },
+        {"tag": "engineering",
+         "patterns": ["Engineering", "2", "Engineering and information sciences"],
+         "responses": ["A degree from the Faculty of Engineering and Information Sciences will develop your\npractical skills to help you embrace innovation and to shape the world around us.\nWe offer a variety of programs in this field:\n\n1)Computer science\n2)Electrical Engineering\n3)Mechanical Engineering\n4)Civil\n\nWhich of these are you interested in?"],
+         "context_filter": "interest"
+        },
+        {"tag": "engineering2",
+         "patterns": ["1", "Computer Science"],
+         "responses": ["Computer scientists design and write programs for computer applications; these\napplications are significant and varied, including computer systems to control machinery,\nthe analysis of stock market trends, games design, visualisation of chemical reactions,\nneural network design, robot navigation, and many other business and industrial applications.\n\nIf you would lik to enroll, please visit: https://admissions.uowdubai.ac.ae/openday/?utm_source=CorpWeb&utm_medium=progpage "],
+         "context_filter": "interest"
+        },
+        {"tag": "enrollment",
+         "patterns": ["I would like to enroll", "I want to enroll", "enrollment", "enroll in a semester"],
+         "responses": ["To enrol in an undergraduate degree program you will need to meet the University's\nminimum academic and English language requirements. In some cases, you are able to\napply for advanced standing, which can provide exemptions on the basis of work you have already\ncompleted at another recognised post-secondary institution. Once enrolled, you can also sit for challenge tests to obtain exemptions from certain foundation level subjects.\n\nIf you like to know how to enroll into subjects for the current semester, please type: Yes"],
+         "context_set": "subjects"
+        },
+        {"tag": "enrollment_2",
+         "patterns": ["Yes"],
+         "responses": ["To enroll into your subjects as a student:\n\n1)Go to My Sols and enter your provided login details\n2)Go to Enrollment>Enrollment and variations\n3)Enter the subject code (i.e. CSCI323)\n4)Add the subject based on the semester\n\nRepeat this for each subject you wish to enroll in"],
+         "context_filter": "subjects"
+        },
+        {"tag": "payments_1",
+         "patterns": ["Where can I pay?", "How do I pay?", "Payment?", "Fees payment", "I want to pay for fees", "Fees", "Pay my fees", "Make a payment", "I want to pay"],
+         "responses": ["For information on fees, payments plans or any financial enquiries, you can email: Fees@uowdubai.ac.ae"]
+        },
+        {"tag": "credit",
+         "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?" ],
+         "responses": ["We accept VISA and Mastercard", "We accept most major credit cards"]
+        },
+        {"tag": "Joke",
+         "patterns": ["Tell me a joke", "Joke", "Give me a joke"],
+         "responses": ["How do robots eat guacamole?\nwith microchips!\n*bu dum tss*", "What do robots eat as snacks?\nmicrochips!"]
+        },
+        {"tag": "Name",
+         "patterns": ["What is your name?", "Your name", "Do you have a name"],
+         "responses": ["The name's HAL, nice to met you", "My name is HAL", "I am HAL"]
+        },
+        {"tag": "BestTeacher",
+         "patterns": ["Who is the best teacher?", "Who is your best teacher?", "Best teacher"],
+         "responses": ["That would be Professor Farhad Oroumchian of course!", "It is Prof Farhad Oroumchian!"]
+        },
+        {"tag": "Love",
+         "patterns": ["I love you", "Love you", "I like you"],
+         "responses": ["Thank you, but I am unable to feel such things", "<3", "And UOWD loves you <3"]
+        }
+]
+}
+
+
